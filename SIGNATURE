@@ -1,0 +1,46 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 f87b0fb5ef8c5e23470c18ad41752a3b653a1fe2 Build.PL
+SHA1 d8490aadadcc01d3148a8ce0b8a5aaf8e9daf20f Changes
+SHA1 1636ced29b7f14cda621464f021cf2b7652e86db LICENSE
+SHA1 a93c54f8e54a61f1400e5dba673fc32610ac10ea MANIFEST
+SHA1 c1ef3014c0bc3ed78eec43db3590cecd28f39a12 MANIFEST.SKIP
+SHA1 7b51fdce5d7df86efffc40f7d883add0202c1436 META.yml
+SHA1 7cfa2f7bdb9c7494ceb0f3260077453c41deb412 Makefile.PL
+SHA1 034cbd255a84e055a3d0d75e9f6d2b0b396749b2 README
+SHA1 8a51cffb89250b0366bb236130edd58140f34bc8 lib/WebService/UWO/Directory/Student.pm
+SHA1 ab187f6f999cd2a00a970494a3cf3a19287313f3 t/00signature.t
+SHA1 098c73350a0323e9ab26c27009c96e3434ba3dd7 t/01compile.t
+SHA1 63cc8667a5bca272b4a2cae3ec58a7ebe771111c t/01critic.rc
+SHA1 2d501d5732a357e2de49275f9fdec98b25178265 t/01critic.t
+SHA1 542cce7912dd37231de990b58995eb14006e83b9 t/01kwalitee.t
+SHA1 ff998b36bf228247ab2828a2694405ec01dce71f t/01manifest.t
+SHA1 e0f0f319a9e009d4389ae539590cfc0902ab7af4 t/01meta.t
+SHA1 bf39de92da8a1aec4bf134f935832fd9b41cd8bc t/01min-perl.t
+SHA1 124c5664fa9555d608126632e6efb360f743c949 t/01pod-coverage.t
+SHA1 5b557271b347dec9b3910aaf981f50300f93137a t/01pod.t
+SHA1 8565723790e535234b649ed7ae64e51209dd1b81 t/01portability.t
+SHA1 3d0e35728328127f7304aa1df9467972a87628ff t/02core.t
+SHA1 16aa2b068bda52024e36b88036b2568b847cacbc t/03live.t
+SHA1 386ce606dd3b79d035d9d52b34a3b85acc24b9ac t/03parser.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (GNU/Linux)
+
+iEYEARECAAYFAkoDqCsACgkQYYN9T93mai8U1gCgr3H0BtvRw5iQVG8xO4OKbewH
+L0kAnArsPHm0GV4aF7VwLxtUIhu+DH9S
+=jT6T
+-----END PGP SIGNATURE-----

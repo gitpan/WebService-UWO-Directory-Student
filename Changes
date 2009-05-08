@@ -1,0 +1,38 @@
+2009-05-07  Jonathan Yu <frequency@cpan.org>
+
+	Updated live test with new test person... sigh
+
+2009-05-07  Jonathan Yu <frequency@cpan.org>
+
+	- Allow C-style for loop (increments of 4 cannot be done as 0..$n
+	- Updated META.yml
+	- Added trimmed README from POD (class specifics removed)
+	- Bumped version to 1.0
+
+2009-05-07  Jonathan Yu <frequency@cpan.org>
+
+	- Changes to fix the regexp parsing (remove /s from options so that .+ doesn't eat \n)
+	- Added suppressions for some Perl::Critic warnings
+	- Added Changes, README and SIGNATURE to MANIFEST
+
+2009-05-07  Jonathan Yu <frequency@cpan.org>
+
+	- Made _parse a subroutine only (not a method anymore)
+	- Allow one- or two-character "noisy" quotes. I think q{} is even worse.
+
+2009-05-07  Jonathan Yu <frequency@cpan.org>
+
+	- Updated MANIFEST to match current dist
+	- Minor doc changes for Student.pm
+
+2009-05-07  Jonathan Yu <frequency@cpan.org>
+
+	Applied svn:keywords
+
+2009-05-07  Jonathan Yu <frequency@cpan.org>
+
+	Injecting module
+
+;; Local Variables:
+;; coding: utf-8
+;; End:
