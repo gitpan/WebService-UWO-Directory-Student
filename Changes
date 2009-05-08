@@ -1,3 +1,8 @@
+2009-05-08  Jonathan Yu <frequency@cpan.org>
+
+	- Bumped version to 1.0.1
+	- Small fix top t/01compile.t
+
 2009-05-07  Jonathan Yu <frequency@cpan.org>
 
 	Updated live test with new test person... sigh

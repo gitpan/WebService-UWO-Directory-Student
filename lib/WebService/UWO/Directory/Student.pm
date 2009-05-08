@@ -1,7 +1,7 @@
 # WebService::UWO::Directory::Student
 #  Retrieve student information from the Western Student Directory
 #
-# $Id: Student.pm 6959 2009-05-08 03:19:19Z FREQUENCY@cpan.org $
+# $Id: Student.pm 6974 2009-05-08 16:56:03Z FREQUENCY@cpan.org $
 #
 # By Jonathan Yu <frequency@cpan.org>, 2006-2009. All rights reversed.
 #
@@ -25,11 +25,11 @@ Western Ontario's student directory
 
 =head1 VERSION
 
-Version 1.0 ($Id: Student.pm 6959 2009-05-08 03:19:19Z FREQUENCY@cpan.org $)
+Version 1.0.1 ($Id: Student.pm 6974 2009-05-08 16:56:03Z FREQUENCY@cpan.org $)
 
 =cut
 
-use version; our $VERSION = qv('1.0');
+use version; our $VERSION = qv('1.0.1');
 
 =head1 DESCRIPTION
 
