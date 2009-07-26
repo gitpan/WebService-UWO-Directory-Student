@@ -3,13 +3,7 @@
 # t/02core.t
 #  Core functionality tests that do not require Internet connectivity
 #
-# By Jonathan Yu <frequency@cpan.org>, 2006-2009. All rights reversed.
-#
-# $Id: 02core.t 6955 2009-05-08 02:27:54Z FREQUENCY@cpan.org $
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: 02core.t 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

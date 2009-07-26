@@ -3,26 +3,32 @@
 # t/01manifest.t
 #  Ensures MANIFEST file is up-to-date
 #
-# By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
-#
-# $Id: 01manifest.t 6955 2009-05-08 02:27:54Z FREQUENCY@cpan.org $
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: 01manifest.t 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;
 
 use Test::More;
 
-unless ($ENV{TEST_AUTHOR}) {
-  plan skip_all => 'Set TEST_AUTHOR to enable module author tests';
+unless ($ENV{AUTOMATED_TESTING} or $ENV{RELEASE_TESTING}) {
+  plan skip_all => 'Author tests not required for installation';
 }
 
-eval 'use Test::DistManifest';
-if ($@) {
-  plan skip_all => 'Test::DistManifest required to test MANIFEST files';
+my %MODULES = (
+  'Test::DistManifest'  => 1.002002,
+  'Module::Manifest'    => 0.07,
+);
+
+while (my ($module, $version) = each %MODULES) {
+  eval "use $module $version";
+  next unless $@;
+
+  if ($ENV{RELEASE_TESTING}) {
+    die 'Could not load release-testing module ' . $module;
+  }
+  else {
+    plan skip_all => $module . ' not available for testing';
+  }
 }
 
 manifest_ok();

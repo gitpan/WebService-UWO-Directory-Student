@@ -3,31 +3,32 @@
 # t/01portability.t
 #  Tests if the distribution seems to be portable
 #
-# By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
-#
-# $Id: 01portability.t 6955 2009-05-08 02:27:54Z FREQUENCY@cpan.org $
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: 01portability.t 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;
 
 use Test::More;
 
-unless ($ENV{TEST_AUTHOR}) {
-  plan(skip_all => 'Set TEST_AUTHOR to enable module author tests');
+unless ($ENV{AUTOMATED_TESTING} or $ENV{RELEASE_TESTING}) {
+  plan skip_all => 'Author tests not required for installation';
 }
 
-eval {
-  require Test::Portability::Files;
-};
-if ($@) {
-  plan skip_all => 'Test::Portability::Files required to test portability';
-}
+my %MODULES = (
+  'Test::Portability::Files' => 0,
+);
 
-Test::Portability::Files->import();
+while (my ($module, $version) = each %MODULES) {
+  eval "use $module $version";
+  next unless $@;
+
+  if ($ENV{RELEASE_TESTING}) {
+    die 'Could not load release-testing module ' . $module;
+  }
+  else {
+    plan skip_all => $module . ' not available for testing';
+  }
+}
 
 options(
   # For descriptions of what these do, consult Test::Portability::Files
@@ -37,7 +38,7 @@ options(
   test_dir_noext      => 1,
   test_dos_length     => 0,
   test_mac_length     => 1,
-  test_one_dot        => 1,
+  test_one_dot        => 0,
   test_space          => 1,
   test_special_chars  => 1,
   test_symlink        => 1,

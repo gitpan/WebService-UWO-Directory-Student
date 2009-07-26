@@ -3,13 +3,7 @@
 # t/03parser.t
 #  Tries to parse a sample page
 #
-# By Jonathan Yu <frequency@cpan.org>, 2006-2009. All rights reversed.
-#
-# $Id: 03parser.t 6957 2009-05-08 03:02:53Z FREQUENCY@cpan.org $
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: 03parser.t 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

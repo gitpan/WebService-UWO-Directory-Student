@@ -1,10 +1,10 @@
 # Perl::Critic resource file
 #
-# $Id: 01critic.rc 6957 2009-05-08 03:02:53Z FREQUENCY@cpan.org $
+# $Id: 01critic.rc 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
 #
 # By Jonathan Yu <frequency@cpan.org>, 2009. All rights reversed.
 #
-# $Id: 01critic.rc 6957 2009-05-08 03:02:53Z FREQUENCY@cpan.org $
+# $Id: 01critic.rc 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
 #
 # This package and its contents are released by the author into the
 # Public Domain, to the full extent permissible by law. For additional
@@ -54,8 +54,13 @@ allow_leading_tabs = 0
 # appropriately (unless, of course, they are obvious)
 [-ValuesAndExpressions::ProhibitMagicNumbers]
 
-# I don't see the benefit of q{} over '', even for one-character strings
+# Most detected quotes don't look all that noisy, and I'm trusting myself to
+# change to q{} if it is clearer.
 [-ValuesAndExpressions::ProhibitNoisyQuotes]
+
+# I often use empty quotes and don't want to litter my namespace with new
+# symbols (like $SPACE) for little to no gain.
+[-ValuesAndExpressions::ProhibitEmptyQuotes]
 
 ###################################################
 ############### DOCUMENTATION
@@ -69,6 +74,9 @@ script_sections = NAME|DESCRIPTION|SYNOPSIS|AUTHOR|LICENSE|SUPPORT
 # This restriction is silly; some measure of performance gain is not worth
 # isolating the documentation from the code it documents.
 [-Documentation::RequirePodAtEnd]
+
+# This causes spurious failures due to its poor handling of taint mode.
+[-Documentation::PodSpelling]
 
 # Ensure that each file is tagged with an Id
 [Miscellanea::RequireRcsKeywords]

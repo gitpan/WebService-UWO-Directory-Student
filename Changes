@@ -1,3 +1,21 @@
+2009-07-25  Jonathan Yu <frequency@cpan.org>
+
+	- Added a generic README and LICENSE.
+	- No longer generate one from the POD
+	- Added an example lookup script
+	- Now allows an empty first or last name to be passed in
+	- No longer test Perl::Critic during AUTOMATED_TESTING, only RELEASE_TESTING. Thanks to Elliot Shank for the discussion in a private mail.
+	- Now version 1.0.2
+
+2009-06-14  Jonathan Yu <frequency@cpan.org>
+
+	- Updated perlcriticrc
+	- No longer enforce "one dot only" in filenames. This breaks compatibility with OpenVMS.
+
+2009-05-12  Jonathan Yu <frequency@cpan.org>
+
+	Updated lUsed clearer license - PD (fallback on MIT, Artistic-2+, GPL-2+)
+
 2009-05-08  Jonathan Yu <frequency@cpan.org>
 
 	- Bumped version to 1.0.1
