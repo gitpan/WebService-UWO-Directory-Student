@@ -1,13 +1,7 @@
 # WebService::UWO::Directory::Student
 #  Retrieve student information from the Western Student Directory
 #
-# $Id: Student.pm 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
-#
-# By Jonathan Yu <frequency@cpan.org>, 2006-2009. All rights reversed.
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: Student.pm 10608 2009-12-23 16:06:17Z FREQUENCY@cpan.org $
 
 package WebService::UWO::Directory::Student;
 
@@ -20,16 +14,17 @@ use HTML::Entities ();
 
 =head1 NAME
 
-WebService::UWO::Directory::Student - Module for searching the University
-of Western Ontario's student directory
+WebService::UWO::Directory::Student - Perl module for searching the UWO
+student directory
 
 =head1 VERSION
 
-Version 1.0.2 ($Id: Student.pm 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $)
+Version 1.004 ($Id: Student.pm 10608 2009-12-23 16:06:17Z FREQUENCY@cpan.org $)
 
 =cut
 
-use version; our $VERSION = qv('1.0.2');
+our $VERSION = '1.004';
+$VERSION = eval $VERSION;
 
 =head1 DESCRIPTION
 
@@ -77,7 +72,9 @@ contact the maintainer.
 
 =head1 METHODS
 
-=head2 WebService::UWO::Directory::Student->new([ \%params ])
+=head2 new
+
+  WebService::UWO::Directory::Student->new( \%params )
 
 Creates a C<UWO::Directory::Student> search object, which uses a given web page
 and server. Being that this module is developed to target UWO's in-house
@@ -106,7 +103,9 @@ sub new {
   return bless($self, $class);
 }
 
-=head2 $dir->lookup(\%params)
+=head2 lookup
+
+  $dir->lookup( \%params )
 
 Uses a C<WebService::UWO::Directory::Student> search object to locate a given
 person based on either their name (C<first> and/or C<last>) or their e-mail
@@ -286,7 +285,9 @@ C<WebService::UWO::Directory::Student> provides access to some internal
 methods used to retrieve and process raw data from the directory server. Its
 behaviour is subject to change and may be finalized later as the need arises.
 
-=head2 $dir->_query($query, [ $ua ])
+=head2 _query
+
+  $dir->_query( $query, $ua )
 
 This method performs an HTTP lookup using C<LWP::UserAgent> and returns a
 SCALAR reference to the returned page content. A C<LWP::UserAgent> object may
@@ -321,7 +322,9 @@ sub _query {
   return \$r->content;
 }
 
-=head2 WebService::UWO::Directory::Student::_parse($response)
+=head2 _parse
+
+  WebService::UWO::Directory::Student::_parse( $response )
 
 This method processes the HTML content retrieved by _query method and returns
 an ARRAY reference containing HASH references to the result set. This is most
@@ -373,7 +376,7 @@ sub _parse {
 
 =head1 AUTHOR
 
-Jonathan Yu E<lt>frequency@cpan.orgE<gt>
+Jonathan Yu E<lt>jawnsy@cpan.orgE<gt>
 
 =head1 SUPPORT
 
@@ -434,7 +437,8 @@ so.
 
 =head1 SEE ALSO
 
-L<http://uwo.ca/westerndir/index-student.html>
+L<http://uwo.ca/westerndir/index-student.html>, the site this module uses
+to query the database
 
 =head1 CAVEATS
 
@@ -450,7 +454,7 @@ There are no known bugs as of this release.
 
 This module is only able to access partial student records since students must
 give consent for their contact information to be published on the web. For
-details, see L<http://uwo.ca/westerndir/index-student.html>.
+more, see L<http://www3.registrar.uwo.ca/InfoServices/DirectoryRemoval.cfm>.
 
 =item *
 
@@ -468,18 +472,9 @@ necessary for most uses.
 
 =head1 LICENSE
 
-Copyleft 2006-2009 by Jonathan Yu <frequency@cpan.org>. All rights reversed.
-
-I, the copyright holder of this package, hereby release the entire contents
-therein into the public domain. This applies worldwide, to the extent that it
-is permissible by law.
-
-In case this is not legally possible, I grant any entity the right to use this
-work for any purpose, without any conditions, unless such conditions are
-required by law.
-
-The full details of this can be found in the B<LICENSE> file included in this
-package.
+In a perfect world, I could just say that this package and all of the code
+it contains is Public Domain. It's a bit more complicated than that; you'll
+have to read the included F<LICENSE> file to get the full details.
 
 =head1 DISCLAIMER OF WARRANTY
 
@@ -488,8 +483,8 @@ implied, including but not limited to the warranties of merchantability,
 fitness for a particular purpose and noninfringement. In no event shall the
 authors or copyright holders be liable for any claim, damages or other
 liability, whether in an action of contract, tort or otherwise, arising from,
-out of or in connection with the software or the use or other dealings in the
-software.
+out of or in connection with the software or the use or other dealings in
+the software.
 
 =cut
 

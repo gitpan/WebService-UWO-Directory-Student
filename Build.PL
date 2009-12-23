@@ -3,11 +3,7 @@
 # Build.PL
 #  Script to build and install this distribution
 #
-# $Id: Build.PL 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
-#
-# This package and its contents are released by the author into the
-# Public Domain, to the full extent permissible by law. For additional
-# information, please see the included `LICENSE' file.
+# $Id: Build.PL 10608 2009-12-23 16:06:17Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;
@@ -15,9 +11,9 @@ use warnings;
 use Module::Build;
 
 my $builder = Module::Build->new(
-  module_name           => 'WebService::UWO::Directory::Service',
+  module_name           => 'WebService::UWO::Directory::Student',
   license               => 'unrestricted',
-  dist_author           => 'Jonathan Yu <frequency@cpan.org>',
+  dist_author           => 'Jonathan Yu <jawnsy@cpan.org>',
   dist_version_from     => 'lib/WebService/UWO/Directory/Student.pm',
   dynamic_config        => 0,
   create_readme         => 0,
@@ -25,19 +21,12 @@ my $builder = Module::Build->new(
   sign                  => 1,
   create_packlist       => 1,
 
-  # Maintain compatibility with ExtUtils::MakeMaker installations
-  create_makefile_pl    => 'passthrough',
-
   requires => {
     'perl'              => 5.006,
+
+    # For retrieving & decoding HTML data
     'LWP::UserAgent'    => 0,
     'HTML::Entities'    => 0,
-
-    # Pragmatic and special modules
-    'Carp'              => 1.04,
-    'version'           => 0,
-    'warnings'          => 0,
-    'strict'            => 0,
 
     # The tests are based on Test::More
     'Test::More'        => 0.62,

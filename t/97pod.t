@@ -1,9 +1,9 @@
 #!/usr/bin/perl -T
 
-# t/01pod.t
+# t/97pod.t
 #  Checks that POD commands are correct
 #
-# $Id: 01pod.t 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
+# $Id: 97pod.t 8624 2009-08-18 05:26:06Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

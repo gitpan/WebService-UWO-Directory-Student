@@ -1,9 +1,9 @@
 #!/usr/bin/perl -T
 
-# t/03parser.t
+# t/02parser.t
 #  Tries to parse a sample page
 #
-# $Id: 03parser.t 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
+# $Id: 02parser.t 8624 2009-08-18 05:26:06Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

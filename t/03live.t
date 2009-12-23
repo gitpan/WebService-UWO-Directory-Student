@@ -3,7 +3,7 @@
 # t/03live.t
 #  Module live functionality tests (requires Internet connectivity)
 #
-# $Id: 03live.t 8216 2009-07-25 22:16:50Z FREQUENCY@cpan.org $
+# $Id: 03live.t 10597 2009-12-23 03:19:38Z FREQUENCY@cpan.org $
 
 use strict;
 use warnings;

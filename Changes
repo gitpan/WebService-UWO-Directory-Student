@@ -1,61 +1,39 @@
-2009-07-25  Jonathan Yu <frequency@cpan.org>
+1.004 - 23 Dec 2009 - Jonathan Yu <jawnsy@cpan.org>
 
-	- Added a generic README and LICENSE.
-	- No longer generate one from the POD
-	- Added an example lookup script
-	- Now allows an empty first or last name to be passed in
-	- No longer test Perl::Critic during AUTOMATED_TESTING, only RELEASE_TESTING. Thanks to Elliot Shank for the discussion in a private mail.
-	- Now version 1.0.2
+  + "oops" release to fix name of tarball
 
-2009-06-14  Jonathan Yu <frequency@cpan.org>
+1.003 - 22 Dec 2009 - Jonathan Yu <jawnsy@cpan.org>
 
-	- Updated perlcriticrc
-	- No longer enforce "one dot only" in filenames. This breaks compatibility with OpenVMS.
+  + Use a simple string version, per David Golden's article:
+    http://www.dagolden.com/index.php/369/version-numbers-should-be-boring/
+  + No longer use Perl::Critic to test
+  + Remove modules available in core since Perl 5.6 from
+    requires
+  + Changed my mail address to jawnsy@cpan.org
+  + Update POD
+  + Update MANIFEST.SKIP according to new defaults provided by
+    ExtUtils::Manifest
+  + Remove pass-through Build.PL
 
-2009-05-12  Jonathan Yu <frequency@cpan.org>
+1.0.2 - 25 Jul 2009 - Jonathan Yu <frequency@cpan.org>
 
-	Updated lUsed clearer license - PD (fallback on MIT, Artistic-2+, GPL-2+)
+  + Added a generic README
+  + No longer generate one from the POD
+  + Added an example lookup script
+  + Now allows an empty first or last name to be passed in
+  + No longer test Perl::Critic during AUTOMATED_TESTING,
+    only RELEASE_TESTING. Thanks to Elliot Shank for the
+    discussion in a private mail.
+  + Updated perlcriticrc
+  + No longer enforce "one dot only" in filenames. This
+    breaks compatibility with OpenVMS.
+  + Updated lUsed clearer license - PD (fallback on MIT,
+    Artistic-2+, GPL-2+)
 
-2009-05-08  Jonathan Yu <frequency@cpan.org>
+1.0.1 - 08 May 2009 - Jonathan Yu <frequency@cpan.org>
 
-	- Bumped version to 1.0.1
-	- Small fix top t/01compile.t
+  + Small fix top t/01compile.t
 
-2009-05-07  Jonathan Yu <frequency@cpan.org>
+1.0 - 07 May 2009 - Jonathan Yu <frequency@cpan.org>
 
-	Updated live test with new test person... sigh
-
-2009-05-07  Jonathan Yu <frequency@cpan.org>
-
-	- Allow C-style for loop (increments of 4 cannot be done as 0..$n
-	- Updated META.yml
-	- Added trimmed README from POD (class specifics removed)
-	- Bumped version to 1.0
-
-2009-05-07  Jonathan Yu <frequency@cpan.org>
-
-	- Changes to fix the regexp parsing (remove /s from options so that .+ doesn't eat \n)
-	- Added suppressions for some Perl::Critic warnings
-	- Added Changes, README and SIGNATURE to MANIFEST
-
-2009-05-07  Jonathan Yu <frequency@cpan.org>
-
-	- Made _parse a subroutine only (not a method anymore)
-	- Allow one- or two-character "noisy" quotes. I think q{} is even worse.
-
-2009-05-07  Jonathan Yu <frequency@cpan.org>
-
-	- Updated MANIFEST to match current dist
-	- Minor doc changes for Student.pm
-
-2009-05-07  Jonathan Yu <frequency@cpan.org>
-
-	Applied svn:keywords
-
-2009-05-07  Jonathan Yu <frequency@cpan.org>
-
-	Injecting module
-
-;; Local Variables:
-;; coding: utf-8
-;; End:
+  + Initial release
